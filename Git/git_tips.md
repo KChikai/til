@@ -3,7 +3,7 @@
 gitを使う際によく使うコマンド例．
 雑なので注意．
 
-
+<br>
 
 ## How to make a new repository
 
@@ -26,7 +26,7 @@ gitを使う際によく使うコマンド例．
 
     git push origin HEAD:master
 
-
+<br><br>
 
 
 ## 取り消し関連
@@ -50,7 +50,7 @@ Example3
     git rm -r --cached .
 
 
-
+<br><br>
 
 ## Branch 
 
@@ -97,7 +97,7 @@ ex)
     Branch django set up to track remote branch django from origin.
 
 
-
+<br><br>
 
 ## GitHub関連
 
