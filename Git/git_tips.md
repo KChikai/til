@@ -34,14 +34,14 @@ gitを使う際によく使うコマンド例．
 ### 一個前のコミットを取り消す
 
 Example1
-	git add hoge (通常通りファイルを追加)
-	git commit —amend -m “hoge commit” (前のcommitは残したまま(反映させない)，新しいcommitを加える)
+	`git add hoge` (通常通りファイルを追加)
+	`git commit --amend -m “hoge commit”` (前のcommitは残したまま(反映させない)，新しいcommitを加える)
 
 Example2
-	git reset —soft HEAD^  (ワーキングツリーの内容はそのまま，前のcommitを完全に消去する)
+	`git reset --soft HEAD^`  (ワーキングツリーの内容はそのまま，前のcommitを完全に消去する)
 
 Example3 
-	git reset —hard HEAD^ (ワーキングツリーの内容毎，前のcommitを削除し，二つ前のcommitの状態に戻る)
+	`git reset --hard HEAD^` (ワーキングツリーの内容毎，前のcommitを削除し，二つ前のcommitの状態に戻る)
 
 ### git ignore の途中反映
 
