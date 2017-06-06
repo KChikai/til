@@ -120,3 +120,15 @@ ex)
 5. `git push origin [branch-name]`
 6. github上でpull-req
 7. merge (これは管理者が行う)
+
+
+### README.md で画像ファイルをセンタリングしたい
+
+htmlタグをそのまま使用することができる．
+
+コード例は以下の通り．
+
+    <p align="center">
+    <img src="path_to_img_file" alt="name_of_img">
+    </p>
+
