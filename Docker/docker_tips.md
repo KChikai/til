@@ -30,7 +30,9 @@ Docker使用時に使ったコマンドや詰まった内容を書きこんで�
 
 Dockerfile があるdir内で...
 
-    nvidia-docker build -t (tag_name) . 
+    nvidia-docker build -t (tag_name) .
+
+コマンドは`docker`でも良い．`-t`指定は正確には`<image_name>:<tag_name>`
 
 ### nvidia-docker でのコンテナRUN例
 
