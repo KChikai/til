@@ -46,9 +46,28 @@ Dockerfile があるdir内で...
 
 imageでインストールしたAnaconda(/root内)の場所にローカルディレクトリをマウントすると上書きされて消えてしまうので別pathにマウントする
 
-<br>
-<br>
 
+### コンテナ内でvimを使いたい
+
+コンテナ内でインストールをする場合
+
+    apt-get update
+    apt-get install vim
+
+もしくは
+
+    yum install vim
+
+Dockerfile内での記述
+
+    FROM ubuntu
+
+    RUN ["apt-get", "update"]
+    RUN ["apt-get", "install", "-y", "vim"]
+
+
+<br>
+<br>
 
 ## コンテナ内にPython環境を設定する
 
