@@ -9,22 +9,22 @@ gitを使う際によく使うコマンド例．
 
 ### 空のremote repositoryが既に作っている状態時
 
-1. `mkdir hoge`  
-2. `cd hoge` 
-3. `git init`  
+1. `$ mkdir hoge`  
+2. `$ cd hoge` 
+3. `$ git init`  
 4. git add and commit + make remote repository
-5. `git push --set-upstream [repository_URL] master`
+5. `$ git push --set-upstream [repository_URL] master`
 
 ### repositoryの作成で先にlocal repositoryを作成した場合
 
 1. remoteにrepositoryを作成
-2. `remote add <short_name> <remote_url>` で紐付け (short_nameは通常origin)
-3. `git push --set-upstream origin master` でremoteにpush
-4. remote repository nameを変更する際は`remote rename <old_name> <new_name>`
+2. `$ git remote add <short_name> <remote_url>` で紐付け (short_nameは通常origin)
+3. `$ git push --set-upstream origin master` でremoteにpush
+4. remote repository nameを変更する際は`$ git remote rename <old_name> <new_name>`
 
 ### git push時のfatal errorについて 
 
-    git push origin HEAD:master
+    $ git push origin HEAD:master
 
 <br><br>
 
@@ -33,29 +33,35 @@ gitを使う際によく使うコマンド例．
 
 ### Add前の変更分を取り消す
 
-    git checkout filename
+    $ git checkout filename
     
 ### Add後Commit前の変更を取り消す
 
-    git reset HEAD filename
+    $ git reset HEAD filename
 
 ### 一個前のコミットを取り消す
 
 Example1
-	`git add hoge` (通常通りファイルを追加)
-	`git commit --amend -m “hoge commit”` (前のcommitは残したまま(反映させない)，新しいcommitを加える)
+	`$ git add hoge` (通常通りファイルを追加)
+	`$ git commit --amend -m “hoge commit”` (前のcommitは残したまま(反映させない)，新しいcommitを加える)
 
 Example2
-	`git reset --soft HEAD^`  (ワーキングツリーの内容はそのまま，前のcommitを完全に消去する)
+	`$ git reset --soft HEAD^`  (ワーキングツリーの内容はそのまま，前のcommitを完全に消去する)
 
 Example3 
-	`git reset --hard HEAD^` (ワーキングツリーの内容毎，前のcommitを削除し，二つ前のcommitの状態に戻る)
+	`$ git reset --hard HEAD^` (ワーキングツリーの内容毎，前のcommitを削除し，二つ前のcommitの状態に戻る)
+
+### pushの取り消し
+
+    $ git revert [<commit>]
+    $ git push
+
 
 ### git ignore の途中反映
 
 キャッシュの消去が必要．変更分が消えるので注意．
 
-    git rm -r --cached .
+    $ git rm -r --cached .
 
 
 <br><br>
@@ -97,7 +103,7 @@ Example3
 
 ### remote branch をローカルに反映
 
-    git branch new-branch origin/new-branch
+    $ git branch new-branch origin/new-branch
 
 ex)
 
@@ -112,9 +118,9 @@ ex)
 ### git fork したリポジトリを本家に追従する方法
 
 1. ローカルにforkしたブランチに移動
-2. `git remote add root_branch [本家のgit_URL] `
-3. `git remote fetch root_branch`
-4. `git merge root_branch/master`
+2. `$ git remote add root_branch [本家のgit_URL] `
+3. `$ git remote fetch root_branch`
+4. `$ git merge root_branch/master`
 
 	(root_branchで名前でなくても良いはず)
 
@@ -122,10 +128,10 @@ ex)
 ### pull-request model
 
 1. 対象のリポジトリをclone
-2. `git checkout -b [branch-name]`
-3. `git add` 
-4. `git commit` 
-5. `git push origin [branch-name]`
+2. `$ git checkout -b [branch-name]`
+3. `$ git add` 
+4. `$ git commit` 
+5. `$ git push origin [branch-name]`
 6. github上でpull-req
 7. merge (これは管理者が行う)
 
