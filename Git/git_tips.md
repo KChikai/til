@@ -31,6 +31,14 @@ gitを使う際によく使うコマンド例．
 
 ## 取り消し関連
 
+### Add前の変更分を取り消す
+
+    git checkout filename
+    
+### Add後Commit前の変更を取り消す
+
+    git reset HEAD filename
+
 ### 一個前のコミットを取り消す
 
 Example1
