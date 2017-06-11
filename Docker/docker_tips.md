@@ -30,7 +30,9 @@ Docker使用時に使ったコマンドや詰まった内容を書きこんで�
 
 Dockerfile があるdir内で...
 
-    nvidia-docker build -t (tag_name) . 
+    nvidia-docker build -t (tag_name) .
+
+コマンドは`docker`でも良い．`-t`指定は正確には`<image_name>:<tag_name>`
 
 ### nvidia-docker でのコンテナRUN例
 
@@ -44,9 +46,28 @@ Dockerfile があるdir内で...
 
 imageでインストールしたAnaconda(/root内)の場所にローカルディレクトリをマウントすると上書きされて消えてしまうので別pathにマウントする
 
-<br>
-<br>
 
+### コンテナ内でvimを使いたい
+
+コンテナ内でインストールをする場合
+
+    apt-get update
+    apt-get install vim
+
+もしくは
+
+    yum install vim
+
+Dockerfile内での記述
+
+    FROM ubuntu
+
+    RUN ["apt-get", "update"]
+    RUN ["apt-get", "install", "-y", "vim"]
+
+
+<br>
+<br>
 
 ## コンテナ内にPython環境を設定する
 
