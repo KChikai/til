@@ -142,7 +142,8 @@ htmlタグをそのまま使用することができる．
 
 コード例は以下の通り．
 
-    <p align="center">
-    <img src="path_to_img_file" alt="name_of_img">
-    </p>
-
+```html
+<p align="center">
+<img src="path_to_img_file" alt="name_of_img">
+</p>
+```
