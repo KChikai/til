@@ -74,10 +74,13 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+<br>
+
 ### シリアライザーとは？
 
 POSTやGETで受け取ったデータを処理して，modelに渡したり，受け取ったりするもの． 具体的には，モデルをJSONにマッピングする役割．
 
+<br>
 
 ### データベースの削除
 テーブル構造はそのまま，データのみ削除できる (スーパーユーザは登録し直す必要あり)
@@ -85,10 +88,11 @@ POSTやGETで受け取ったデータを処理して，modelに渡したり，�
 python manage.py flush --database=default
 ```
 
+<br>
 
 ### データベース関連のエラー
 
-データベース関連のエラーについてまとめる…
+データベース関連のエラーについてまとめる．
 
 **Django dependencies reference nonexistent parent nodeのエラーについて**
 
@@ -100,6 +104,7 @@ python manage.py flush --database=default
 2. 0002_autoなんとかとかのmigrate files を削除
 3. `python manage.py makemigrations`を実行
 
+<br>
 
 **no such table: 問題について**
 
@@ -108,12 +113,14 @@ makemigrate => migrateしても新しくテーブルは作成されない．
 この時は，`db.sqlite`ファイルそのものを削除して，再度makemigrate => migrateすることで解決する．
 （データベースが全部消えるので最終手段）
 
+<br>
 
 **SystemCheckError: System check identified some issues: エラーについて**
 
 admin用pythonスクリプトのカラムネームの間違いにより起こった．
 実際これが起こるとmigrate等が全くできないので注意．
 
+<br>
 
 **Foreign Key のネストデータが上手く表示されないケース**
 
@@ -128,6 +135,7 @@ modelをいじった時は注意（最悪もう一度データベースを作り
 これっていう解決策がわからない．
 （コードを変えていないのに治るケースがあったので何かしらの前データのゴミが残っていた可能性がある）
 
+<br>
 
 **excludeしたい問題**
 
